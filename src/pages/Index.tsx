@@ -1,6 +1,11 @@
 import { useEffect } from 'react';
 import Layout from '@/components/layout/Layout';
 import HeroSection from '@/components/portfolio/HeroSection';
+import ExperienceSection from '@/components/portfolio/ExperienceSection';
+import AboutSection from '@/components/portfolio/AboutSection';
+import PortfolioSection from '@/components/portfolio/PortfolioSection';
+import BlogSection from '@/components/portfolio/BlogSection';
+import ContactSection from '@/components/portfolio/ContactSection';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -24,6 +29,11 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection />
+      <ExperienceSection />
+      <AboutSection />
+      <PortfolioSection />
+      <BlogSection />
+      <ContactSection />
     </Layout>
   );
 };
