@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import HeroSection from '@/components/portfolio/HeroSection';
+import ExperienceSection from '@/components/portfolio/ExperienceSection';
+import AboutSection from '@/components/portfolio/AboutSection';
+import PortfolioSection from '@/components/portfolio/PortfolioSection';
+import BlogSection from '@/components/portfolio/BlogSection';
+import ContactSection from '@/components/portfolio/ContactSection';
+import Footer from '@/components/portfolio/Footer';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Index = () => {
+  useEffect(() => {
+    // Initialize GSAP animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Smooth scrolling
+    gsap.config({
+      nullTargetWarn: false,
+      force3D: true
+    });
+
+    // Set dark theme by default
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <HeroSection />
+      <ExperienceSection />
+      <AboutSection />
+      <PortfolioSection />
+      <BlogSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };
